@@ -1,0 +1,30 @@
+memory 8gb
+molecule {
+    symmetry c1 # this is important; some perturbations will break symmetry
+#    no_reorient
+C
+C      1      1.39488
+H      1      2.15458    2     25.89906
+C      1      1.39482    2    119.99966    3   -179.99418
+C      2      2.41593    3    150.00304    4   -179.99180
+H      3      4.29813    4     50.80650    5     -0.00164
+H      4      3.87635    5     30.00139    6    179.98875
+H      5      3.87637    6    179.99593    7    -70.33537
+C      6      2.15457    7     25.89980    8      0.00070
+C      7      3.40080    8     50.80591    9     -0.00136
+H      8      2.48148    9     80.80515   10     -0.00266
+H      9      3.40069   10      9.19420   11   -179.99033
+
+}
+
+pert = 0.001
+lambdas = [pert, -pert, 2.0*pert, -2.0*pert]
+
+set {
+    basis     sto-3g
+    d_convergence   6
+    reference rhf
+    scf_type direct
+}
+method = 'B3LYP'
+energy(method)
