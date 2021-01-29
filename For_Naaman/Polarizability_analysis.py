@@ -1,6 +1,9 @@
 import numpy as np
 from numpy import linalg as LA
 
+HS_25_polarizability = np.array([[ -616.06509371,  -338.23860565,   168.61275949],
+ [ -339.53209953, -3271.1258288,     49.97796199],
+ [  169.52823124,    49.92681813, -3248.46416257]])
 HS_13_polarizability = np.array( [[ -632.12055991,   361.8850252,   -105.08752708],
  [  362.5104567,  -2561.1274773,    -86.79063915],
  [ -105.24760956,   -86.84916529, -2747.83281691]])
@@ -38,6 +41,9 @@ def polarizability_analisys_norm(Pol):
 if __name__ == '__main__':
     print("RESULTS IN DECREASING ANISOTROPY")
     print("================================")
+    print("HS_25")
+    print("----")
+    polarizability_analisys_norm(HS_25_polarizability)
     print("HS_13")
     print("-----")
     polarizability_analisys_norm(HS_13_polarizability)
